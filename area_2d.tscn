@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://b05xg83cqvdie"]
+
+[ext_resource type="Texture2D" uid="uid://bn3mpatnbvtgu" path="res://dirt_height.png" id="1_2h67k"]
+[ext_resource type="Texture2D" uid="uid://bdtqegk45g5tl" path="res://floor_tiled.png" id="2_ebooq"]
+[ext_resource type="Script" path="res://CharacterBody2d.cs" id="2_xq6qc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_77bp2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yyjrt"]
+
+[node name="Area2D" type="Area2D"]
+position = Vector2(600, 325)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_77bp2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_2h67k")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("2_xq6qc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_yyjrt")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_ebooq")
