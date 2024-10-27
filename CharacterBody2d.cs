@@ -13,7 +13,7 @@ public partial class CharacterBody2d : CharacterBody2D
 
 		// Get the input direction for both horizontal and vertical movement
 		var direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
-		
+
 		// Update the X velocity based on left/right input
 		if (direction.X != 0)
 		{
@@ -22,7 +22,7 @@ public partial class CharacterBody2d : CharacterBody2D
 		else
 		{
 			// Decelerate X velocity
-			velocity.X = Mathf.MoveToward(velocity.X, 0, (float)Speed * (float)delta); // Explicitly cast to float
+			velocity.X = 0; // Explicitly cast to float
 		}
 
 		// Update the Y velocity based on up/down input
@@ -33,7 +33,7 @@ public partial class CharacterBody2d : CharacterBody2D
 		else
 		{
 			// Decelerate Y velocity
-			velocity.Y = Mathf.MoveToward(velocity.Y, 0, (float)Speed * (float)delta); // Explicitly cast to float
+			velocity.Y = 0; // Explicitly cast to float
 		}
 
 		// Assign the updated velocity
