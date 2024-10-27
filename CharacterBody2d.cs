@@ -1,17 +1,18 @@
 using Godot;
-using System;
+
+namespace Shantz2dExplorer;
 
 public partial class CharacterBody2d : CharacterBody2D
 {
-	public const float Speed = 300.0f;
+	private const float Speed = 300.0f;
 	public const float JumpVelocity = -400.0f;
 
 	public override void _PhysicsProcess(double delta)
 	{
-		Vector2 velocity = Velocity;
+		var velocity = Velocity;
 
 		// Get the input direction for both horizontal and vertical movement
-		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
+		var direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
 		
 		// Update the X velocity based on left/right input
 		if (direction.X != 0)
